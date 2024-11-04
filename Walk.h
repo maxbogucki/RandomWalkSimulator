@@ -23,4 +23,9 @@ public:
 
 ostream& operator<<(ostream& os, const Walk& w);
 
+double calculateAverageDistance(const vector<Walk>& walks);
+double findShortestDistance(const vector<Walk>& walks);
+double findMedianDistance(vector<double>& distances);
+double findLongestDistance(const vector<Walk>& walks);
+
 #endif // Walk.h
