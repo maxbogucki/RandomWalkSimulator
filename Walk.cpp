@@ -57,3 +57,36 @@ std::ostream& operator<<(std::ostream& os, const Walk& w) {
     os << "Point: " << w.getX() << ", " << w.getY() << " Distance: " << w.getDistance();
     return os;
 }
+
+double calculateAverageDistance(const vector<Walk>& walks) {
+    double totalDistance = 0;
+    for (const auto& walk : walks) {
+        totalDistance += walk.getDistance();
+    }
+    return totalDistance / walks.size();
+}
+
+double findShortestDistance(const vector<Walk>& walks) {
+    double shortest = numeric_limits<double>::max();
+    for (const auto& walk : walks) {
+        if (walk.getDistance() < shortest) {
+            shortest = walk.getDistance();
+        }
+    }
+    return shortest;
+}
+
+double findMedianDistance(vector<double>& distances) {
+    size_t size = distances.size();
+    return (size % 2 == 0) ? (distances[size / 2 - 1] + distances[size / 2]) / 2.0 : distances[size / 2];
+}
+
+double findLongestDistance(const vector<Walk>& walks) {
+    double longest = 0;
+    for (const auto& walk : walks) {
+        if (walk.getDistance() > longest) {
+            longest = walk.getDistance();
+        }
+    }
+    return longest;
+}
