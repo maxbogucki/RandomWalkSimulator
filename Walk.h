@@ -1,8 +1,7 @@
+// Walk.h
+#ifndef WALK_H
+#define WALK_H
 #include <iostream>
-#include "Walk.h"
-#include <cmath>
-#include "UtilRand.h"
-using namespace std;
 
 class Walk {
 private:
@@ -23,3 +22,5 @@ public:
 };
 
 ostream& operator<<(ostream& os, const Walk& w);
+
+#endif // Walk.h
